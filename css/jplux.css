@@ -70,7 +70,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 .jplux-offer.reverse > *{ direction: ltr; }
 .jplux-offer-media .media-placeholder{ aspect-ratio: 4/3; }
 .jplux-offer-media .media-placeholder.dark{
-  background: repeating-linear-gradient(45deg, #1a1a1c 0 2px, #101011 2px 26px);
+  background: linear-gradient(150deg, #1c1c1e 0%, #101011 100%);
   border: 1px solid rgba(201,162,75,0.25);
 }
 .jplux-eyebrow{
