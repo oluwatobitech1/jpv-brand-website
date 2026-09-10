@@ -813,28 +813,52 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .site-footer{ background: var(--black); color: var(--grey); }
 .footer-inner{
   max-width: var(--maxw); margin:0 auto;
-  padding: 2.5rem 1.5rem;
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  gap: 1rem;
-  border-top: 1px solid var(--grey-line);
+  padding: 3rem 1.5rem 2rem;
 }
-.footer-copy, .footer-tag{ margin:0; font-size:.85rem; }
-.footer-nav{ display:flex; gap: 1.4rem; flex-wrap:wrap; }
-.footer-nav a{ font-size:.85rem; color: var(--grey); }
-.footer-nav a:hover{ color: var(--yellow); }
-.footer-contact{ margin:0; font-size:.85rem; }
-.footer-contact a{ color: var(--grey); }
+.footer-top{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--grey-line);
+  padding-top: 2.5rem;
+}
+.footer-brand{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .9rem;
+  max-width: 360px;
+}
+.footer-brand .footer-tag{ margin:0; font-size:.88rem; color: var(--grey); }
+.footer-right{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.footer-contact{ margin:0; font-family: var(--font-display); font-size: 1rem; }
+.footer-contact a{ color: var(--white); }
 .footer-contact a:hover{ color: var(--yellow); }
 .footer-social{ display:flex; gap: .8rem; }
 .footer-social a{
   color: var(--grey);
-  width: 30px; height: 30px;
+  width: 34px; height: 34px;
   border: 1px solid var(--grey-line);
   border-radius: 50%;
   display:flex; align-items:center; justify-content:center;
   transition: color .15s, border-color .15s;
 }
 .footer-social a:hover{ color: var(--yellow); border-color: var(--yellow); }
+.footer-bottom{ padding-top: 1.5rem; text-align:center; }
+.footer-copy{ margin:0; font-size:.85rem; }
+
+@media (max-width: 640px){
+  .footer-top{ flex-direction:column; align-items:flex-start; }
+  .footer-right{ align-items:flex-start; }
+}
 
 /* ==========================================================
    RESPONSIVE
