@@ -1,0 +1,343 @@
+/* ==========================================================
+   SITE-WIDE ANIMATION SYSTEM
+   Scroll reveals, marquee, floating, hover polish, counters.
+   Everything here is additive — it never changes layout, size,
+   or color, only motion/opacity, and everything is skipped
+   entirely under prefers-reduced-motion (see bottom of file).
+   ========================================================== */
+
+:root{
+  --ease-smooth: cubic-bezier(.22, .61, .36, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-fast: .35s;
+  --dur-mid: .8s;
+  --dur-slow: .9s;
+}
+
+/* ---------- page load fade ---------- */
+/* pure CSS, no JS dependency: if a script ever fails to load, the
+   page must never be left invisible. */
+@keyframes page-fade-in{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+body{
+  animation: page-fade-in .5s var(--ease-smooth) both;
+}
+
+/* ---------- scroll reveal base states ---------- */
+[data-reveal]{
+  opacity: 0;
+  transition: opacity var(--dur-mid) var(--ease-out), transform var(--dur-mid) var(--ease-out);
+  transition-delay: calc(var(--reveal-i, 0) * 90ms);
+  will-change: transform, opacity;
+}
+[data-reveal="up"]{ transform: translateY(32px); }
+[data-reveal="left"]{ transform: translateX(-56px); }
+[data-reveal="right"]{ transform: translateX(56px); }
+[data-reveal="scale"]{ transform: scale(.94); }
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- floating ---------- */
+@keyframes float-y{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-9px); }
+}
+.float{ animation: float-y 5s ease-in-out infinite; }
+.float-slow{ animation: float-y 7.5s ease-in-out infinite; }
+.float-delay{ animation-delay: 1.2s; }
+
+/* ---------- subtle pulse for "live" status badges ---------- */
+@keyframes soft-pulse{
+  0%, 100%{ box-shadow: 0 0 0 0 rgba(214,90,72,0.35); }
+  50%{ box-shadow: 0 0 0 5px rgba(214,90,72,0); }
+}
+.badge-ongoing{ animation: soft-pulse 2.6s ease-in-out infinite; }
+
+/* ---------- animated gradient backgrounds ---------- */
+@keyframes gradient-drift{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+.gradient-animated{
+  background-size: 200% 200%;
+  animation: gradient-drift 12s ease infinite;
+}
+
+/* ---------- marquee ---------- */
+.marquee{
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track{
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee:hover .marquee-track{ animation-play-state: paused; }
+.marquee-track span{
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 1.4rem;
+}
+.marquee-track span::after{
+  content: "\2726";
+  margin-left: 1.4rem;
+  opacity: .5;
+  font-size: .7em;
+}
+@keyframes marquee-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+/* ---------- counters (state only, animation is JS-driven textContent) ---------- */
+[data-counter]{ font-variant-numeric: tabular-nums; }
+
+/* ---------- hover polish: cards, images, links ---------- */
+.project-media, .case-media, .product-media, .coming-soon-image, .spotlight-media, .jplux-lookbook-item{
+  overflow: hidden;
+}
+.project-media img, .case-media img, .product-media img, .coming-soon-image img,
+.spotlight-media img, .jplux-lookbook-item img{
+  transition: transform .6s var(--ease-out);
+}
+.project-card:hover .project-media img,
+.case-card:hover .case-media img,
+.product-card:hover .product-media img,
+.jplux-lookbook-item:hover img{
+  transform: scale(1.06);
+}
+.spotlight-card:hover .spotlight-media img{ transform: scale(1.04); }
+
+a{ transition: color .2s ease; }
+.btn{ transition: transform .2s var(--ease-out), background-color .15s ease, color .15s ease, box-shadow .2s ease, border-color .15s ease; }
+.btn:hover{ transform: translateY(-2px); }
+.btn:active{ transform: translateY(0); }
+.status-btn, .category-nav a, .chip{ transition: transform .18s var(--ease-out), border-color .15s ease, background-color .15s ease, color .15s ease; }
+.status-btn:hover, .category-nav a:hover{ transform: translateY(-1px); }
+
+.nav a{ position: relative; }
+.footer-social a{ transition: transform .2s var(--ease-out), color .2s ease, border-color .2s ease; }
+.footer-social a:hover{ transform: translateY(-3px); }
+
+/* ---------- image scale-in on hover for generic media blocks ---------- */
+.media-placeholder{ overflow: hidden; }
+.media-placeholder img{ transition: transform .6s var(--ease-out); }
+.media-placeholder:hover img{ transform: scale(1.05); }
+
+/* ---------- hero parallax support ---------- */
+.hero-bg .hero-slide-img.active{ will-change: transform; }
+
+
+/* ==========================================================
+   V2 — extended motion system
+   ========================================================== */
+
+/* ---------- reveal refinements ---------- */
+[data-reveal="left"] img, [data-reveal="right"] img{
+  transform: scale(1.14);
+  transition: transform 1.5s var(--ease-out);
+  transition-delay: inherit;
+}
+[data-reveal="left"].is-visible img, [data-reveal="right"].is-visible img{ transform: scale(1); }
+
+/* ---------- hero entrance (pure CSS so it can never leave content hidden) ---------- */
+@keyframes rise-in{
+  from{ opacity: 0; transform: translateY(26px); }
+  to{ opacity: 1; transform: none; }
+}
+.hero-copy > *:not(h1){ animation: rise-in .9s var(--ease-out) both; }
+.hero-copy > .kicker{ animation-delay: .1s; }
+.hero-copy > .hero-lead{ animation-delay: .75s; }
+.hero-copy > .hero-actions{ animation-delay: .9s; }
+.hero-copy > .hero-stats{ animation-delay: 1.05s; }
+.page-hero-inner > *:not(h1), .catalog-hero-inner > *:not(h1){ animation: rise-in .9s var(--ease-out) both; }
+.page-hero-inner > .kicker, .catalog-hero-inner > .kicker{ animation-delay: .1s; }
+.page-hero-inner > .hero-lead, .catalog-hero-inner > .hero-lead{ animation-delay: .55s; }
+.hero-chip{ animation: rise-in 1s var(--ease-out) 1.2s both, float-y 7.5s ease-in-out 2.2s infinite; }
+.hero-dots{ animation: rise-in .9s var(--ease-out) 1.2s both; }
+
+/* ---------- split-word headings ---------- */
+.split-words .w{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(.6em);
+  transition: opacity .8s var(--ease-out), transform .9s var(--ease-out);
+  transition-delay: calc(var(--wi, 0) * 55ms + var(--base, 0ms));
+}
+.split-words.is-in .w{ opacity: 1; transform: none; }
+/* word spans must not pick up the hero's grey <span> styling; only the original outer span stays grey */
+.hero h1 .w{ color: inherit; font-weight: inherit; }
+
+/* ---------- scroll progress + header ---------- */
+.scroll-progress{
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60;
+  background: linear-gradient(90deg, var(--yellow-deep), var(--yellow));
+  transform: scaleX(0); transform-origin: 0 50%;
+  pointer-events: none; will-change: transform;
+}
+.site-header{ transition: box-shadow .35s ease, background-color .35s ease; }
+.site-header.is-scrolled{ box-shadow: 0 8px 28px rgba(0,0,0,.28); background: rgba(11,11,12,.97); }
+
+/* ---------- page transition overlay ---------- */
+.page-transition{
+  position: fixed; inset: 0; z-index: 9999; background: var(--black);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+html.page-leaving .page-transition{ opacity: 1; pointer-events: all; }
+
+/* ---------- banners: parallax layer ---------- */
+.banner.has-parallax{ background-image: none !important; }
+.banner-bg{
+  position: absolute; left: 0; right: 0; top: -10%; height: 120%;
+  z-index: -2; background-size: cover; background-position: center;
+  will-change: transform; transform: translate3d(0,0,0);
+}
+
+/* ---------- marquee variants ---------- */
+.marquee-track{ animation-duration: var(--marquee-speed, 32s); }
+.marquee-reverse .marquee-track{ animation-direction: reverse; }
+.marquee-band{ background: var(--black); padding: 1.6rem 0; overflow: hidden; }
+.marquee-outline .marquee-track span{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6.4vw, 5rem);
+  line-height: 1.1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(250,249,246,.38);
+  padding: 0 1.6rem;
+  transition: color .3s ease, -webkit-text-stroke-color .3s ease;
+}
+.marquee-outline .marquee-track span:nth-child(3n){ color: var(--yellow); -webkit-text-stroke: 0; }
+.marquee-outline .marquee-track span::after{ color: var(--yellow); -webkit-text-stroke: 0; opacity: .8; font-size: .35em; }
+.marquee-outline .marquee-track span:hover{ color: rgba(250,249,246,.12); }
+
+/* pill scroller (capabilities) */
+.capabilities{ background: var(--black); color: var(--white); padding: 4.5rem 0; overflow: hidden; }
+.capabilities .section-head{ padding: 0 1.5rem; }
+.capabilities .section-head h2{ color: var(--white); }
+.capabilities .marquee{ margin-top: 1.1rem; }
+.capabilities .marquee-track{ gap: .9rem; padding-right: .9rem; }
+.pill{
+  display: inline-flex; align-items: center; gap: .7rem; white-space: nowrap;
+  padding: .85rem 1.5rem; border-radius: 999px;
+  background: var(--black-card); border: 1px solid var(--grey-line);
+  font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--white);
+  transition: border-color .25s ease, background-color .25s ease, transform .25s var(--ease-out);
+}
+.pill::before{ content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex: none; }
+.pill:hover{ border-color: var(--yellow); background: rgba(205,166,88,.08); transform: translateY(-2px); }
+.marquee-plain{ -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-plain .marquee-track span::after{ content: none; }
+
+/* ---------- animated background glows (dark sections) ---------- */
+.section-dark, .page-hero, .catalog-hero{ position: relative; overflow: hidden; isolation: isolate; }
+.section-dark::before, .page-hero::before, .catalog-hero::before,
+.section-dark::after, .page-hero::after, .catalog-hero::after{
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  width: min(60vw, 820px); height: min(60vw, 820px);
+  will-change: transform;
+}
+.section-dark::before, .page-hero::before, .catalog-hero::before{
+  top: -30%; left: -12%;
+  background: radial-gradient(closest-side, rgba(205,166,88,.10), transparent 72%);
+  animation: orb-a 24s ease-in-out infinite alternate;
+}
+.section-dark::after, .page-hero::after, .catalog-hero::after{
+  bottom: -35%; right: -10%;
+  background: radial-gradient(closest-side, rgba(173,81,64,.09), transparent 72%);
+  animation: orb-b 28s ease-in-out infinite alternate;
+}
+@keyframes orb-a{ from{ transform: translate3d(0,0,0) scale(1); } to{ transform: translate3d(14vw,8%,0) scale(1.15); } }
+@keyframes orb-b{ from{ transform: translate3d(0,0,0) scale(1.1); } to{ transform: translate3d(-12vw,-10%,0) scale(.95); } }
+
+/* pause anything looping while it is off-screen (set by JS) */
+.is-offscreen::before, .is-offscreen::after, .is-offscreen .marquee-track{ animation-play-state: paused !important; }
+
+/* moving gold bar under the hero */
+.hazard-strip{
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-deep), var(--yellow));
+  background-size: 200% 100%;
+  animation: bar-shimmer 7s linear infinite;
+}
+@keyframes bar-shimmer{ from{ background-position: 0% 0; } to{ background-position: -200% 0; } }
+
+/* ---------- subtle floating on selected icons ---------- */
+@keyframes float-soft{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-6px); } }
+.service-icon svg, .brand-tile svg{ animation: float-soft 6s ease-in-out infinite; }
+.service-card:nth-child(2) .service-icon svg, .brand-tile:nth-child(2) svg{ animation-delay: -1.5s; }
+.service-card:nth-child(3) .service-icon svg, .brand-tile:nth-child(3) svg{ animation-delay: -3s; }
+.brand-tile:nth-child(4) svg{ animation-delay: -4.5s; }
+.chat-toggle{ animation: float-soft 6.5s ease-in-out 3s infinite; }
+.chat-widget.open .chat-toggle{ animation: none; }
+
+/* ---------- hover polish (pointer devices only) ---------- */
+.btn{ position: relative; overflow: hidden; }
+.btn-yellow::after{
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: skewX(-20deg) translateX(0); opacity: 0; pointer-events: none;
+}
+.text-link .arrow{ display: inline-block; transition: transform .3s var(--ease-out); }
+@media (hover: hover){
+  .btn-yellow:hover::after{ opacity: 1; animation: btn-shine .8s var(--ease-smooth); }
+  .text-link:hover .arrow{ transform: translateX(6px); }
+  .service-card:hover .service-icon{ transform: scale(1.08); }
+  .service-icon{ transition: transform .35s var(--ease-out); }
+  .brand-tile{ transition: transform .25s var(--ease-out), border-color .25s ease, background-color .25s ease, box-shadow .25s ease; }
+  .brand-tile:hover{ transform: translateY(-4px); border-color: rgba(205,166,88,.5); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+  .service-card, .project-card, .case-card, .product-card, .spotlight-card{ transition: transform .35s var(--ease-out), box-shadow .35s ease; }
+  .stat-item{ transition: transform .3s var(--ease-out); }
+  .stat-item:hover{ transform: translateY(-3px); }
+  .main-nav a:not(.nav-cta)::after{
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+    background: var(--yellow); transform: scaleX(0); transform-origin: 0 50%;
+    transition: transform .35s var(--ease-out);
+  }
+  .main-nav a:not(.nav-cta):hover::after, .main-nav a.active:not(.nav-cta)::after{ transform: scaleX(1); }
+}
+@media (hover: hover) and (min-width: 761px){ .main-nav a{ position: relative; } }
+@keyframes btn-shine{ from{ left: -60%; } to{ left: 130%; } }
+
+/* ---------- banner text reveal variants ---------- */
+.banner .kicker{ position: relative; }
+
+/* ---------- small screens: shorter travel, calmer motion ---------- */
+@media (max-width: 760px){
+  [data-reveal="left"]{ transform: translateX(-28px); }
+  [data-reveal="right"]{ transform: translateX(28px); }
+  [data-reveal="up"]{ transform: translateY(24px); }
+  .section-dark::before, .page-hero::before, .catalog-hero::before,
+  .section-dark::after, .page-hero::after, .catalog-hero::after{ width: 90vw; height: 90vw; }
+  .marquee-outline .marquee-track span{ -webkit-text-stroke-width: 1px; }
+  .capabilities{ padding: 3rem 0; }
+}
+
+@media print{
+  [data-reveal]{ opacity: 1 !important; transform: none !important; }
+  .split-words .w{ opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- reduced motion: switch every animation off ---------- */
+@media (prefers-reduced-motion: reduce){
+  body{ opacity: 1 !important; }
+  [data-reveal]{ opacity: 1 !important; transform: none !important; transition: none !important; }
+  [data-reveal] img{ transform: none !important; transition: none !important; }
+  .split-words .w{ opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-copy > *, .page-hero-inner > *, .catalog-hero-inner > *, .hero-chip, .hero-dots{ animation: none !important; opacity: 1 !important; }
+  .float, .float-slow, .badge-ongoing, .gradient-animated, .marquee-track, .hazard-strip,
+  .service-icon svg, .brand-tile svg, .chat-toggle,
+  .section-dark::before, .section-dark::after, .page-hero::before, .page-hero::after,
+  .catalog-hero::before, .catalog-hero::after{ animation: none !important; }
+  .project-media img, .case-media img, .product-media img, .coming-soon-image img,
+  .spotlight-media img, .jplux-lookbook-item img, .media-placeholder img{ transition: none !important; }
+  .page-transition{ display: none; }
+}
