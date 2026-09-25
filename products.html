@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/images/jpv-logo-mark.png" rel="icon" type="image/png"/>
+<link href="assets/images/jpv-logo-mark.png" rel="apple-touch-icon"/>
+<title>JPLUX UK Products | JPV Brand</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="JPLUX UK Products | JPV Brand">
+<meta property="og:description" content="Browse the full JPLUX UK product catalog: security cameras, plumbing &amp; sanitary fittings, lighting, power accessories, and lifestyle gadgets supplied by JPV Brand.">
+<meta property="og:image" content="assets/images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JPLUX UK Products | JPV Brand">
+<meta name="twitter:description" content="Browse the full JPLUX UK product catalog: security cameras, plumbing &amp; sanitary fittings, lighting, power accessories, and lifestyle gadgets supplied by JPV Brand.">
+<meta content="Browse the full JPLUX UK product catalog: security cameras, plumbing &amp; sanitary fittings, lighting, power accessories, and lifestyle gadgets supplied by JPV Brand." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/cart.css" rel="stylesheet"/>
+<link href="css/animations.css" rel="stylesheet"/>
+<link href="css/chat-widget.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+<div class="header-inner">
+<a aria-label="JPV Brand home" class="logo" href="index.html">
+<img alt="JPV Brand logo mark" class="logo-mark" height="42" src="assets/images/jpv-logo-mark.png" width="42"/>
+<span class="logo-word">JPV<em>Brand</em></span>
+</a>
+<nav class="main-nav" id="mainNav">
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="exports.html">Exports</a>
+<a href="middle-east.html">Middle East</a>
+<a href="africa.html">Africa</a>
+<a href="europe.html">Europe</a>
+<a class="active" href="products.html">Products</a>
+<a href="jplux-uk.html">JPLUX UK</a>
+      <a href="blog.html">Blog</a>
+<a class="nav-cta" href="contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Search the site" class="search-toggle" id="searchToggle">
+<svg aria-hidden="true" height="20" viewbox="0 0 24 24" width="20"><circle cx="11" cy="11" fill="none" r="7" stroke="currentColor" stroke-width="2"></circle><line stroke="currentColor" stroke-linecap="round" stroke-width="2" x1="16.3" x2="21" y1="16.3" y2="21"></line></svg>
+</button>
+<button aria-expanded="false" aria-label="Open your bulk order request" class="cart-toggle" id="cartToggle">
+<svg aria-hidden="true" height="21" viewbox="0 0 24 24" width="21"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1.4.9L12 18.5l-4.6 2.4A1 1 0 0 1 6 20V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path><line stroke="currentColor" stroke-linecap="round" stroke-width="1.7" x1="9" x2="15" y1="8.5" y2="8.5"></line><line stroke="currentColor" stroke-linecap="round" stroke-width="1.7" x1="9" x2="15" y1="12" y2="12"></line></svg>
+<span class="cart-badge" hidden="" id="cartBadge">0</span>
+</button>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="search-panel" id="searchPanel">
+<div class="search-panel-inner">
+<label class="visually-hidden" for="siteSearchInput">Search the site</label>
+<input id="siteSearchInput" placeholder="Search projects, products, services..." type="search"/>
+<button aria-label="Close search" class="search-close" id="searchClose">×</button>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</header>
+<!-- ============ BULK ORDER REQUEST ============ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside aria-hidden="true" aria-label="Bulk order request" class="cart-drawer" id="cartDrawer">
+<div class="cart-drawer-head">
+<h3>Bulk Order Request</h3>
+<button aria-label="Close" class="cart-close" id="cartClose">×</button>
+</div>
+<div class="cart-body" id="cartBody">
+<p class="cart-drawer-intro">This isn't a checkout, it's a wholesale enquiry. We don't list prices since most orders are bulk, add what you need below and we'll come back to you with pricing and shipping for your quantities and region.</p>
+
+<div class="cart-form">
+<label class="cart-field">Company / business name
+<input id="orderCompany" placeholder="e.g. Acme Trading Ltd" type="text">
+</label>
+<label class="cart-field">Contact person
+<input id="orderContact" placeholder="Your full name" type="text">
+</label>
+<div class="cart-form-row">
+<label class="cart-field">Email
+<input id="orderEmail" placeholder="you@company.com" type="email">
+</label>
+<label class="cart-field">Phone <span class="cart-field-optional">(optional)</span>
+<input id="orderPhone" placeholder="+234..." type="tel">
+</label>
+</div>
+<label class="cart-field">Delivery region
+<select id="orderRegion">
+<option value="">Select a region</option>
+<option>West Africa</option>
+<option>Middle East</option>
+<option>Europe</option>
+<option>Other</option>
+</select>
+</label>
+<label class="cart-field">Notes <span class="cart-field-optional">(optional)</span>
+<textarea id="orderNotes" placeholder="Delivery timeline, packaging preferences, anything else we should know" rows="2"></textarea>
+</label>
+</div>
+
+<h4 class="cart-items-title">Items in this request</h4>
+<div class="cart-items" id="cartItems">
+<p class="cart-empty">Your list is empty. Add products and their quantities below to build your request.</p>
+</div>
+</div>
+<div class="cart-drawer-foot">
+<div class="cart-total-line">
+<span>Total items</span>
+<strong id="cartTotalCount">0</strong>
+</div>
+<button class="btn btn-yellow cart-checkout" disabled="" id="cartCheckout">Send bulk order request</button>
+<button class="btn-text cart-clear" disabled="" id="cartClear">Clear list</button>
+</div>
+</aside>
+<main>
+<!-- ============ PAGE INTRO ============ -->
+<section class="catalog-hero">
+<div class="catalog-hero-inner">
+<p class="kicker">JPLUX UK Range</p>
+<h1>Products we supply</h1>
+<p class="hero-lead">From security cameras and plumbing fittings to lighting and power accessories, JPLUX UK is JPV Brand's product range for homes, offices, and developments. Jump to a category below, or get in touch for bulk pricing and shipping to your region.</p>
+</div>
+</section>
+
+  <!-- ============ MOVING TEXT STRIP ============ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee marquee-reverse" style="--marquee-speed:30s">
+      <div class="marquee-track"><span>Security cameras</span><span>Plumbing &amp; sanitary</span><span>Lighting</span><span>Solar &amp; outdoor</span><span>Power &amp; charging</span><span>Smart home essentials</span></div>
+    </div>
+  </div>
+
+<!-- ============ CATEGORY QUICK NAV ============ -->
+<nav aria-label="Product categories" class="category-nav">
+<div class="category-nav-inner">
+<a href="#security-cameras">Security Cameras</a>
+<a href="#plumbing-sanitary">Plumbing &amp; Sanitary</a>
+<a href="#lifestyle-gadgets">Lifestyle &amp; Gadgets</a>
+<a href="#power-charging">Power, Charging &amp; Accessories</a>
+<a href="#track-ring-lights">Track &amp; Ring Lights</a>
+<a href="#indoor-lighting">Indoor Lighting</a>
+<a href="#electrical-accessories">Electrical Accessories</a>
+<a href="#solar-outdoor">Solar &amp; Outdoor Lighting</a>
+</div>
+</nav>
+<!-- ============ SECURITY CAMERAS ============ -->
+<section class="section catalog-section" id="security-cameras">
+<div class="section-head left">
+<h2>Security cameras</h2>
+<p class="section-sub">Indoor and solar-powered options for homes &amp; sites</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Security Cameras" data-product-id="indoor-camera" data-product-name="Indoor Camera" id="product-indoor-camera">
+<div class="product-media"><img alt="Indoor Camera photo" src="assets/images/product-indoor-camera.jpg"/></div>
+<h4>Indoor Camera</h4>
+<p>V720 app control over WiFi, in white.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-indoor-camera" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Security Cameras" data-product-id="solar-camera-3-lens" data-product-name="Solar Camera (3 Lens)" id="product-solar-camera-3-lens">
+<div class="product-media"><img alt="Solar Camera (3 Lens) photo" src="assets/images/product-solar-camera.jpg"/></div>
+<h4>Solar Camera (3 Lens)</h4>
+<p>Solar powered with 3 lenses, controlled through the EseeCloud app over 4G.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-camera-3-lens" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ PLUMBING & SANITARY ============ -->
+<section class="section catalog-section alt" id="plumbing-sanitary">
+<div class="section-head left">
+<h2>Plumbing &amp; sanitary</h2>
+<p class="section-sub">Sinks, showers, mixers, and kitchen fittings in chrome finish</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="stainless-steel-sink-double-bowl" data-product-name="Stainless Steel Sink (Double Bowl)" id="product-stainless-steel-sink-double-bowl">
+<div class="product-media"><img alt="Stainless Steel Sink photo" src="assets/images/product-stainless-sink.jpg"/></div>
+<h4>Stainless Steel Sink (Double Bowl)</h4>
+<p>Double bowl</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-stainless-steel-sink-double-bowl" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="tissue-holder-chrome" data-product-name="Tissue Holder (Chrome)" id="product-tissue-holder-chrome">
+<div class="product-media"><img alt="Tissue Holder photo" src="assets/images/product-tissue-holder.jpg"/></div>
+<h4>Tissue Holder (Chrome)</h4>
+<p>Wall-mounted, chrome finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-tissue-holder-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="shower-set-complete-chrome" data-product-name="Shower Set Complete (Chrome)" id="product-shower-set-complete-chrome">
+<div class="product-media"><img alt="Shower Set photo" src="assets/images/product-shower-set.jpg"/></div>
+<h4>Shower Set Complete (Chrome)</h4>
+<p>Full riser rail set with handheld shower</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-shower-set-complete-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="shower-mixer-chrome" data-product-name="Shower Mixer (Chrome)" id="product-shower-mixer-chrome">
+<div class="product-media"><img alt="Shower Mixer photo" src="assets/images/product-shower-mixer.jpg"/></div>
+<h4>Shower Mixer (Chrome)</h4>
+<p>Bath &amp; shower mixer tap</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-shower-mixer-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="kitchen-faucet-chrome-pull-out" data-product-name="Kitchen Faucet Chrome (Pull‑Out)" id="product-kitchen-faucet-chrome-pull-out">
+<div class="product-media"><img alt="Kitchen Faucet photo" src="assets/images/product-kitchen-faucet-pullout.jpg"/></div>
+<h4>Kitchen Faucet Chrome (Pull‑Out)</h4>
+<p>Pull-out spray head, chrome finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-kitchen-faucet-chrome-pull-out" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Plumbing &amp; Sanitary" data-product-id="kitchen-faucet-chrome" data-product-name="Kitchen Faucet Chrome" id="product-kitchen-faucet-chrome">
+<div class="product-media"><img alt="Kitchen Faucet photo" src="assets/images/product-kitchen-faucet.jpg"/></div>
+<h4>Kitchen Faucet Chrome</h4>
+<p>Standard mixer tap, chrome finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-kitchen-faucet-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ LIFESTYLE & GADGETS ============ -->
+<section class="section catalog-section" id="lifestyle-gadgets">
+<div class="section-head left">
+<h2>Lifestyle &amp; gadgets</h2>
+<p class="section-sub">Everyday essentials for home and travel</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Lifestyle &amp; Gadgets" data-product-id="aer-air-freshener" data-product-name="AER Air Freshener" id="product-aer-air-freshener">
+<div class="product-media"><img alt="AER Air Freshener photo" src="assets/images/product-aer-air-freshener.jpg"/></div>
+<h4>AER Air Freshener</h4>
+<p>5 flavours: Sea Breeze, Berry Rush, Lemon Tangy, Rose Fresh, Jasmine Floral</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-aer-air-freshener" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Lifestyle &amp; Gadgets" data-product-id="laptop-bag" data-product-name="Laptop Bag" id="product-laptop-bag">
+<div class="product-media"><img alt="Laptop Bag photo" src="assets/images/product-laptop-bag.jpg"/></div>
+<h4>Laptop Bag</h4>
+<p>Available in grey and black, sized 38 x 30 x 3cm.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-laptop-bag" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Lifestyle &amp; Gadgets" data-product-id="smart-watch-2-straps" data-product-name="Smart Watch (2 straps)" id="product-smart-watch-2-straps">
+<div class="product-media"><img alt="Smart Watch photo" src="assets/images/product-smart-watch.jpg"/></div>
+<h4>Smart Watch (2 straps)</h4>
+<p>Colours: Black 300pcs, White 100pcs, Grey 100pcs, Golden 100pcs</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-smart-watch-2-straps" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ POWER, CHARGING & ACCESSORIES ============ -->
+<section class="section catalog-section alt" id="power-charging">
+<div class="section-head left">
+<h2>Power, charging &amp; accessories</h2>
+<p class="section-sub">Power banks, torches, adaptors, and cabling</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="solar-power-bank" data-product-name="Solar Power Bank" id="product-solar-power-bank">
+<div class="product-media"><img alt="Solar Power Bank photo" src="assets/images/product-solar-power-bank.jpg"/></div>
+<h4>Solar Power Bank</h4>
+<p>10,000mAh and 20,000mAh</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-power-bank" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="keychain-torch-power-bank" data-product-name="Keychain Torch + Power Bank" id="product-keychain-torch-power-bank">
+<div class="product-media"><img alt="Keychain Torch photo" src="assets/images/product-keychain-torch.jpg"/></div>
+<h4>Keychain Torch + Power Bank</h4>
+<p>Multi-functional, compact keychain design</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-keychain-torch-power-bank" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="solar-torch" data-product-name="Solar Torch" id="product-solar-torch">
+<div class="product-media"><img alt="Solar Torch photo" src="assets/images/product-solar-torch.jpg"/></div>
+<h4>Solar Torch</h4>
+<p>Rechargeable, solar-powered</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-torch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="multi-function-torch" data-product-name="Multi-Function Torch" id="product-multi-function-torch">
+<div class="product-media"><img alt="Multi-Function Torch photo" src="assets/images/product-multi-function-torch.jpg"/></div>
+<h4>Multi-Function Torch</h4>
+<p>LED 5W torch with power bank &amp; cutter tool</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-multi-function-torch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="adaptor-plug-66w" data-product-name="Adaptor Plug 66W" id="product-adaptor-plug-66w">
+<div class="product-media"><img alt="Adaptor Plug photo" src="assets/images/product-adaptor-plug.jpg"/></div>
+<h4>Adaptor Plug 66W</h4>
+<p>Super fast charging, reverse charging U + C + L</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-adaptor-plug-66w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Power, Charging &amp; Accessories" data-product-id="extension-cable-3m" data-product-name="Extension Cable 3M" id="product-extension-cable-3m">
+<div class="product-media"><img alt="Extension Cable photo" src="assets/images/product-extension-cable.jpg"/></div>
+<h4>Extension Cable 3M</h4>
+<p>Multi-socket with USB ports</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-extension-cable-3m" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ TRACK & RING LIGHTS ============ -->
+<section class="section catalog-section" id="track-ring-lights">
+<div class="section-head left">
+<h2>Track &amp; ring lights</h2>
+<p class="section-sub">Track lighting systems and content-creator ring lights</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Track &amp; Ring Lights" data-product-id="track-light-10w-20w" data-product-name="Track Light 10W, 20W" id="product-track-light-10w-20w">
+<div class="product-media"><img alt="Track Light photo" src="assets/images/product-track-light.jpg"/></div>
+<h4>Track Light 10W, 20W</h4>
+<p>Available in black and white, 200 units each in stock.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-track-light-10w-20w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Track &amp; Ring Lights" data-product-id="track-rail-1m" data-product-name="Track Rail 1M" id="product-track-rail-1m">
+<div class="product-media"><img alt="Track Rail photo" src="assets/images/product-track-rail.jpg"/></div>
+<h4>Track Rail 1M</h4>
+<p>Available in black and white, 270 units each in stock; fits 3 track lights per 1m rail.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-track-rail-1m" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Track &amp; Ring Lights" data-product-id="ring-light-12-14-16-and-18" data-product-name='Ring Light (12", 14", 16" and 18")' id="product-ring-light-12-14-16-and-18">
+<div class="product-media"><img alt="Ring Light photo" src="assets/images/product-ring-light.jpg"/></div>
+<h4>Ring Light (12", 14", 16" and 18")</h4>
+<p>Includes 2.1m tripod &amp; carry bag</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-ring-light-12-14-16-and-18" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ INDOOR LIGHTING ============ -->
+<section class="section catalog-section alt" id="indoor-lighting">
+<div class="section-head left">
+<h2>Indoor lighting</h2>
+<p class="section-sub">Spot lights and panel lights for residential &amp; commercial fit-outs</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Indoor Lighting" data-product-id="spot-light-small" data-product-name="Spot Light Small" id="product-spot-light-small">
+<div class="product-media"><img alt="Spot Light Small photo" src="assets/images/product-spot-light-small.jpg"/></div>
+<h4>Spot Light Small</h4>
+<p>3W, 5W and 7W</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-spot-light-small" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Indoor Lighting" data-product-id="spot-light-big" data-product-name="Spot Light Big" id="product-spot-light-big">
+<div class="product-media"><img alt="Spot Light Big photo" src="assets/images/product-spot-light-big.jpg"/></div>
+<h4>Spot Light Big</h4>
+<p>5W, 7W and 12W</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-spot-light-big" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Indoor Lighting" data-product-id="panel-light" data-product-name="Panel Light" id="product-panel-light">
+<div class="product-media"><img alt="Panel Light photo" src="assets/images/product-panel-light.jpg"/></div>
+<h4>Panel Light</h4>
+<p>6W, 9W and 12W</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-panel-light" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ ELECTRICAL ACCESSORIES ============ -->
+<section class="section catalog-section" id="electrical-accessories">
+<div class="section-head left">
+<h2>Electrical accessories</h2>
+<p class="section-sub">Switches &amp; sockets</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="switch-1-2-3-and-4-gang" data-product-name="Switch (1, 2, 3 and 4 gang)" id="product-switch-1-2-3-and-4-gang">
+<div class="product-media"><img alt="Switches photo" src="assets/images/product-switches.jpg"/></div>
+<h4>Switch (1, 2, 3 and 4 gang)</h4>
+<p>White finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-switch-1-2-3-and-4-gang" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="socket" data-product-name="Socket" id="product-socket">
+<div class="product-media"><img alt="Socket photo" src="assets/images/product-socket.jpg"/></div>
+<h4>Socket</h4>
+<p>Standard wall socket, white finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-socket" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="25a-switch" data-product-name="25A Switch" id="product-25a-switch">
+<div class="product-media"><img alt="25A Switch photo" src="assets/images/product-25a-switch.jpg"/></div>
+<h4>25A Switch</h4>
+<p>White finish</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-25a-switch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="45a-switch" data-product-name="45A Switch" id="product-45a-switch">
+<div class="product-media"><img alt="45A Switch photo" src="assets/images/product-45a-switch.jpg"/></div>
+<h4>45A Switch</h4>
+<p>White finish, red switch action</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-45a-switch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="tv-socket" data-product-name="TV Socket" id="product-tv-socket">
+<div class="product-media"><img alt="TV Socket photo" src="assets/images/product-tv-socket.jpg"/></div>
+<h4>TV Socket</h4>
+<p>Wall-mounted aerial socket</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-tv-socket" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Electrical Accessories" data-product-id="switched-socket-double" data-product-name="Switched Socket (Double)" id="product-switched-socket-double">
+<div class="product-media"><img alt="Switched Socket (Double) photo" src="assets/images/product-socket-double.jpg"/></div>
+<h4>Switched Socket (Double)</h4>
+<p>White finish, red switch indicator</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-switched-socket-double" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+</section>
+<!-- ============ SOLAR & OUTDOOR LIGHTING ============ -->
+<section class="section catalog-section alt" id="solar-outdoor">
+<div class="section-head left">
+<h2>Solar &amp; outdoor lighting</h2>
+<p class="section-sub">Solar-powered fixtures for streets, sites &amp; compounds</p>
+</div>
+<div class="products-grid">
+<article class="product-card" data-product-category="Solar &amp; Outdoor Lighting" data-product-id="solar-street-light-150w" data-product-name="Solar Street Light 150W" id="product-solar-street-light-150w">
+<div class="product-media"><img alt="Solar Street Light 150W photo" src="assets/images/product-solar-street-light-150w.jpg"/></div>
+<h4>Solar Street Light 150W</h4>
+<p>Battery 3.2V 8AH, mono panel 6V 15W, 620 x 238mm ABS housing, with remote and radar sensor.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-150w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Solar &amp; Outdoor Lighting" data-product-id="solar-street-light-200w" data-product-name="Solar Street Light 200W" id="product-solar-street-light-200w">
+<div class="product-media"><img alt="Solar Street Light 200W photo" src="assets/images/product-solar-street-light-200w.jpg"/></div>
+<h4>Solar Street Light 200W</h4>
+<p>Battery 3.2V 10AH, mono panel 6V 18W, 720 x 240mm ABS housing, with remote and radar sensor.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-200w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+<article class="product-card" data-product-category="Solar &amp; Outdoor Lighting" data-product-id="solar-street-light-250w" data-product-name="Solar Street Light 250W" id="product-solar-street-light-250w">
+<div class="product-media"><img alt="Solar Street Light 250W photo" src="assets/images/product-solar-street-light-250w.jpg"/></div>
+<h4>Solar Street Light 250W</h4>
+<p>Battery 3.2V 18AH, mono panel 6V 20W, 820 x 240mm ABS housing, with remote and radar sensor.</p>
+<div class="product-order">
+<div aria-label="Quantity" class="qty-stepper" role="group">
+<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
+<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
+</div>
+<button class="btn btn-add-cart" type="button">Add to list</button>
+<div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-250w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
+<div class="share-menu" hidden="">
+<button class="share-option share-copy" type="button">Copy link</button>
+<a class="share-option share-whatsapp" href="#" rel="noopener" target="_blank">WhatsApp</a>
+<a class="share-option share-x" href="#" rel="noopener" target="_blank">X</a>
+<a class="share-option share-facebook" href="#" rel="noopener" target="_blank">Facebook</a>
+</div></div></div></article>
+</div>
+<p class="catalog-note">More items in this category are being finalised. Contact us for current availability and lead times.</p>
+<a class="btn btn-outline" href="contact.html">Ask about this range</a>
+</section>
+<!-- ============ CTA ============ -->
+<section class="section">
+<div class="promo-band">
+<div class="promo-copy">
+<h2>Need bulk pricing or shipping to your region?</h2>
+<p>Get in touch with quantities and destination and we'll put together a quote, including logistics from the UAE or China.</p>
+</div>
+<a class="btn btn-yellow" href="contact.html">Contact us</a>
+</div>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo small" href="index.html">
+<img alt="JPV Brand logo mark" class="logo-mark" height="30" src="assets/images/jpv-logo-mark.png" width="30"/>
+<span class="logo-word">JPV<em>Brand</em></span>
+</a>
+</div>
+<div class="footer-right">
+<p class="footer-contact"><a href="mailto:contact@jpvbrand.com">contact@jpvbrand.com</a></p>
+<div class="footer-social">
+<a aria-label="Twitter / X" href="https://x.com/jpvestate" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24" width="18"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18.6a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1Z" fill="currentColor"></path></svg>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/jpvestate/" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24" width="18"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="1.6" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.1"></circle></svg>
+</a>
+<a aria-label="YouTube" href="https://www.youtube.com/channel/UCHBNSMVRemeQUBlEAEQWsZw" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24" width="18"><rect fill="none" height="13" rx="3.5" stroke="currentColor" stroke-width="1.6" width="20" x="2" y="5.5"></rect><path d="M10 9.5l6 2.5-6 2.5Z" fill="currentColor"></path></svg>
+</a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@jpv_brand" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24" width="18"><path d="M16.5 2h-3v13.2a3.2 3.2 0 1 1-2.3-3.1v-3.1a6.3 6.3 0 1 0 5.3 6.2V8.8c1.1.8 2.5 1.3 4 1.3V7.1c-2.1 0-3.9-1.6-4-4V2Z" fill="currentColor"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2026 by JPV Brand. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+</div>
+</footer>
+
+<!-- ============ CHAT WIDGET ============ -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-panel" id="chatPanel" aria-hidden="true">
+    <div class="chat-panel-head">
+      <div class="chat-avatar">
+        <img src="assets/images/jpv-logo-mark.png" alt="" width="34" height="34">
+      </div>
+      <div class="chat-head-text">
+        <strong>JPV Brand</strong>
+        <span>We reply by email, usually within 1 business day</span>
+      </div>
+      <button type="button" class="chat-panel-close" id="chatPanelClose" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div class="chat-panel-body">
+      <div class="chat-bubble">
+        <span class="chat-wave" aria-hidden="true">&#128075;</span>
+        Hi! Welcome to <strong>JPV Brand</strong>. What can we help you with?
+      </div>
+
+      <div class="chat-quick-options" id="chatQuickOptions">
+        <button type="button" class="chat-option" data-prompt="Hi, I'd like an export quote for: ">&#128666; Get an export quote</button>
+        <button type="button" class="chat-option" data-prompt="Hi, I'm interested in JPLUX UK products: ">&#128230; JPLUX UK products</button>
+        <button type="button" class="chat-option" data-prompt="Hi, I have a question about a current project: ">&#127968; Ask about a project</button>
+        <button type="button" class="chat-option" data-prompt="Hi, ">&#128172; Something else</button>
+      </div>
+    </div>
+
+    <form class="chat-panel-input" id="chatForm">
+      <label for="chatMessage" class="visually-hidden">Your message</label>
+      <textarea id="chatMessage" rows="1" placeholder="Type a message..." required></textarea>
+      <button type="submit" class="chat-send" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 11.5 20.5 4 13 21.5l-2.7-7.3L3 11.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+    <p class="chat-panel-note">Sending opens your email app with this message addressed to us</p>
+  </div>
+
+  <button type="button" class="chat-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">
+    <svg class="chat-icon-open" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 4h16v12H8l-4 4V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <svg class="chat-icon-close" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/share.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/chat-widget.js"></script>
+</body>
+</html>
