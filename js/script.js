@@ -1,4 +1,14 @@
 // ==========================================================
+// MOBILE TAP FIX
+// ==========================================================
+// iOS Safari requires two taps on any link/button that has a CSS
+// :hover style but no JS click handler attached: the first tap only
+// triggers :hover, the second actually activates it. Registering an
+// empty touchstart listener tricks iOS into skipping that behavior,
+// so every link and button responds to a single tap, site-wide.
+document.addEventListener('touchstart', function () {}, { passive: true });
+
+// ==========================================================
 // SITE SEARCH
 // ==========================================================
 // A small hand-built index of every major section across all 8 pages.
