@@ -1116,5 +1116,5 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .banner::before, .banner-right::before{
     background: linear-gradient(0deg, rgba(11,11,12,.9) 0%, rgba(11,11,12,.6) 60%, rgba(11,11,12,.45) 100%);
   }
-  .banner-actions .btn{ width:100%; text-align:center; }
+  .banner-actions .btn{ width:100%; justify-content:center; }
 }
