@@ -82,7 +82,11 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   -webkit-user-select: none;
   user-select: none;
   touch-action: manipulation;
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
 }
+.hero-actions, .banner-actions{ position: relative; z-index: 5; isolation: isolate; }
 .btn-yellow{
   background: var(--yellow);
   color: var(--black);
