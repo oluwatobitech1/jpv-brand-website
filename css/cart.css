@@ -95,6 +95,12 @@
   white-space: nowrap;
 }
 .btn-add-cart:hover{ background: var(--black); color: var(--white); }
+.btn-add-cart:active, .qty-btn:active{ transform: scale(.94); }
+.btn-add-cart, .qty-btn, .cart-checkout, .cart-item-remove, .btn-share{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 .btn-add-cart.added{
   background: var(--yellow);
   border-color: var(--yellow);
