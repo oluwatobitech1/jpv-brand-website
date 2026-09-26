@@ -78,15 +78,25 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   border-radius: var(--radius-full);
   cursor:pointer;
   transition: transform .15s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.btn:active{ transform: scale(.96); }
+
+/* ---------- mobile tap tuning ----------
+   Holding a link a beat too long normally opens the browser's
+   "Open in new tab / Copy link" menu. Turning off the long-press
+   callout on anything styled as a button or nav link means a
+   slightly-long tap still just activates it instead of popping
+   that menu up. Ordinary body text/paragraphs keep normal
+   selection and long-press behavior. */
+.btn, .text-link, .main-nav a, .nav-cta, .chat-option,
+.category-nav a, .status-btn, .chat-toggle, .cart-toggle,
+.search-toggle, .nav-toggle{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
-  touch-action: manipulation;
-  position: relative;
-  z-index: 5;
-  pointer-events: auto;
 }
-.hero-actions, .banner-actions{ position: relative; z-index: 5; isolation: isolate; }
+.text-link:active{ opacity: .6; }
+.main-nav a:active{ opacity: .55; }
 .btn-yellow{
   background: var(--yellow);
   color: var(--black);
@@ -1124,5 +1134,5 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .banner::before, .banner-right::before{
     background: linear-gradient(0deg, rgba(11,11,12,.9) 0%, rgba(11,11,12,.6) 60%, rgba(11,11,12,.45) 100%);
   }
-  .banner-actions .btn{ width:100%; justify-content:center; }
+  .banner-actions .btn{ width:100%; text-align:center; }
 }
