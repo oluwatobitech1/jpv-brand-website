@@ -34,7 +34,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 }
 .jplux-wordmark em{ font-style:normal; color: var(--jplux-gold-light); }
 .jplux-hero h1{
-  font-family: var(--font-jplux-display);
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2.1rem, 4.2vw, 3.2rem);
   color: var(--white);
@@ -52,7 +52,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 
 .jplux-section{ max-width: var(--maxw); margin: 0 auto; padding: 5rem 1.5rem; }
 .jplux-section .section-head h2{
-  font-family: var(--font-jplux-display);
+  font-family: var(--font-display);
   color: var(--white);
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
 }
@@ -106,7 +106,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 .jplux-philosophy{ text-align:center; }
 .jplux-philosophy-inner{ max-width: 680px; margin:0 auto; }
 .jplux-philosophy h2{
-  font-family: var(--font-jplux-display);
+  font-family: var(--font-display);
   color: var(--white);
   font-size: clamp(1.8rem, 2.8vw, 2.4rem);
   margin-bottom: .6em;
