@@ -9,6 +9,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none; /* container itself must never block taps on page content */
+}
+.chat-widget .chat-toggle,
+.chat-widget .chat-panel{
+  pointer-events: auto; /* only the actual visible button/panel should catch taps */
 }
 
 /* ---- toggle button ---- */
