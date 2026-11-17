@@ -15,8 +15,8 @@
 
 body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 
-.jplux-header{ background: rgba(12,12,13,0.94); }
-.main-nav a.active{ color: var(--jplux-gold); }
+.jplux-header{ background: rgba(255,255,255,.97); }
+.main-nav a.active{ color: var(--gold-text); }
 
 .jplux-hero{
   padding: 6rem var(--gutter) 5rem;

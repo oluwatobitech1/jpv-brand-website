@@ -185,7 +185,7 @@ a{ transition: color .2s ease; }
   pointer-events: none; will-change: transform;
 }
 .site-header{ transition: box-shadow .35s ease, background-color .35s ease; }
-.site-header.is-scrolled{ box-shadow: 0 8px 28px rgba(0,0,0,.28); background: rgba(11,11,12,.97); }
+.site-header.is-scrolled{ box-shadow: 0 6px 24px rgba(11,11,12,.10); background: rgba(255,255,255,.98); }
 
 /* ---------- page transition overlay ---------- */
 .page-transition{
