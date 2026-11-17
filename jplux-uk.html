@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/chat-widget.css">
 <link rel="stylesheet" href="css/jplux.css">
-<link rel="stylesheet" href="css/cart.css">
 </head>
 <body class="jplux">
 
@@ -49,10 +48,6 @@
     <button class="search-toggle" id="searchToggle" aria-label="Search the site" aria-expanded="false">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <button class="cart-toggle" id="cartToggle" aria-label="Open your bulk order request" aria-expanded="false">
-      <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1.4.9L12 18.5l-4.6 2.4A1 1 0 0 1 6 20V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="8.5" x2="15" y2="8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="9" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      <span class="cart-badge" id="cartBadge" hidden>0</span>
-    </button>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -67,60 +62,6 @@
     <div class="search-results" id="searchResults"></div>
   </div>
 </header>
-
-<!-- ============ BULK ORDER REQUEST (shared with Products page) ============ -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Bulk order request">
-  <div class="cart-drawer-head">
-    <h3>Bulk Order Request</h3>
-    <button class="cart-close" id="cartClose" aria-label="Close">&times;</button>
-  </div>
-  <div class="cart-body" id="cartBody">
-    <p class="cart-drawer-intro">This isn't a checkout, it's a wholesale enquiry. We don't list prices since most orders are bulk, add what you need below and we'll come back to you with pricing and shipping for your quantities and region.</p>
-
-    <div class="cart-form">
-      <label class="cart-field">Company / business name
-        <input type="text" id="orderCompany" placeholder="e.g. Acme Trading Ltd">
-      </label>
-      <label class="cart-field">Contact person
-        <input type="text" id="orderContact" placeholder="Your full name">
-      </label>
-      <div class="cart-form-row">
-        <label class="cart-field">Email
-          <input type="email" id="orderEmail" placeholder="you@company.com">
-        </label>
-        <label class="cart-field">Phone <span class="cart-field-optional">(optional)</span>
-          <input type="tel" id="orderPhone" placeholder="+234...">
-        </label>
-      </div>
-      <label class="cart-field">Delivery region
-        <select id="orderRegion">
-          <option value="">Select a region</option>
-          <option>West Africa</option>
-          <option>Middle East</option>
-          <option>Europe</option>
-          <option>Other</option>
-        </select>
-      </label>
-      <label class="cart-field">Notes <span class="cart-field-optional">(optional)</span>
-        <textarea id="orderNotes" rows="2" placeholder="Delivery timeline, packaging preferences, anything else we should know"></textarea>
-      </label>
-    </div>
-
-    <h4 class="cart-items-title">Items in this request</h4>
-    <div class="cart-items" id="cartItems">
-      <p class="cart-empty">Your list is empty. Add products and their quantities below to build your request.</p>
-    </div>
-  </div>
-  <div class="cart-drawer-foot">
-    <div class="cart-total-line">
-      <span>Total items</span>
-      <strong id="cartTotalCount">0</strong>
-    </div>
-    <button class="btn btn-yellow cart-checkout" id="cartCheckout" disabled>Send bulk order request</button>
-    <button class="btn-text cart-clear" id="cartClear" disabled>Clear list</button>
-  </div>
-</aside>
 
 <main>
 
@@ -174,15 +115,7 @@
           <li>Deep bass performance with clear, balanced sound, built for long listening sessions and daily use</li>
         </ul>
         <p class="jplux-note">Featured: JPLUX UK Premium Wireless Headphones with Hi‑Fi stereo sound, long-lasting battery, Bluetooth wireless connectivity, and deep bass performance.</p>
-        <div class="product-order jplux-order" data-product-id="jplux-wireless-headphones" data-product-name="JPLUX UK Premium Wireless Headphones" data-product-category="JPLUX UK Audio">
-          <div class="qty-stepper" role="group" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
-            <input type="number" class="qty-input" value="1" min="1" step="1" inputmode="numeric" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
-          </div>
-          <button type="button" class="btn btn-add-cart">Add to list</button>
         </div>
-      </div>
     </div>
 
     <div class="jplux-offer reverse">
@@ -198,14 +131,6 @@
           <li>Reinforced, tangle-resistant designs, engineered to charge faster and last longer</li>
         </ul>
         <p class="jplux-note">Featured: 6A Fast Charge Transfer &amp; Charging Cord (2m), Premium Type‑C Fast Cable.</p>
-        <div class="product-order jplux-order" data-product-id="jplux-fast-charge-cable" data-product-name="6A Fast Charge Transfer &amp; Charging Cord, 2m" data-product-category="JPLUX UK Charging">
-          <div class="qty-stepper" role="group" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
-            <input type="number" class="qty-input" value="1" min="1" step="1" inputmode="numeric" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
-          </div>
-          <button type="button" class="btn btn-add-cart">Add to list</button>
-        </div>
         <a href="products.html#power-charging" class="text-link jplux-cross-link">See related charging accessories in our catalog →</a>
       </div>
     </div>
@@ -222,18 +147,10 @@
           <li>Durable cables and connectors</li>
           <li>Universal compatibility with modern devices</li>
         </ul>
-        <div class="product-order jplux-order" data-product-id="jplux-mobile-accessories" data-product-name="Mobile &amp; Smart Accessories (assorted)" data-product-category="JPLUX UK Mobile &amp; Smart">
-          <div class="qty-stepper" role="group" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
-            <input type="number" class="qty-input" value="1" min="1" step="1" inputmode="numeric" aria-label="Quantity">
-            <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
-          </div>
-          <button type="button" class="btn btn-add-cart">Add to list</button>
         </div>
-      </div>
     </div>
 
-    <p class="jplux-catalog-cta"><a href="products.html" class="text-link">Browse the full JPV product catalog for bulk orders →</a></p>
+    <p class="jplux-catalog-cta"><a href="products.html" class="text-link">Browse the full JPV product catalog →</a></p>
   </section>
 
   <!-- ============ WHY CHOOSE ============ -->
@@ -362,8 +279,6 @@
 
 
 <script src="js/script.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/jplux-cart.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/chat-widget.js"></script>
 </body>

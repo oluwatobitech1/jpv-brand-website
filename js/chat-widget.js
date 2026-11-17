@@ -20,11 +20,6 @@
   const CHAT_EMAIL = 'contact@jpvbrand.com';
 
   function openPanel() {
-    // if the bulk-order cart drawer is open on this page, close it first
-    // so the two floating panels don't stack on top of each other
-    if (typeof closeDrawer === 'function') {
-      try { closeDrawer(); } catch (e) { /* no cart on this page */ }
-    }
     widget.classList.add('open');
     panel.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');

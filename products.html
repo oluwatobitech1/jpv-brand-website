@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet"/>
-<link href="css/cart.css" rel="stylesheet"/>
+<link href="css/share.css" rel="stylesheet"/>
 <link href="css/animations.css" rel="stylesheet"/>
 <link href="css/chat-widget.css" rel="stylesheet"/>
 </head>
@@ -46,10 +46,6 @@
 <button aria-expanded="false" aria-label="Search the site" class="search-toggle" id="searchToggle">
 <svg aria-hidden="true" height="20" viewbox="0 0 24 24" width="20"><circle cx="11" cy="11" fill="none" r="7" stroke="currentColor" stroke-width="2"></circle><line stroke="currentColor" stroke-linecap="round" stroke-width="2" x1="16.3" x2="21" y1="16.3" y2="21"></line></svg>
 </button>
-<button aria-expanded="false" aria-label="Open your bulk order request" class="cart-toggle" id="cartToggle">
-<svg aria-hidden="true" height="21" viewbox="0 0 24 24" width="21"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1.4.9L12 18.5l-4.6 2.4A1 1 0 0 1 6 20V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path><line stroke="currentColor" stroke-linecap="round" stroke-width="1.7" x1="9" x2="15" y1="8.5" y2="8.5"></line><line stroke="currentColor" stroke-linecap="round" stroke-width="1.7" x1="9" x2="15" y1="12" y2="12"></line></svg>
-<span class="cart-badge" hidden="" id="cartBadge">0</span>
-</button>
 <button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" id="navToggle">
 <span></span><span></span><span></span>
 </button>
@@ -63,59 +59,6 @@
 <div class="search-results" id="searchResults"></div>
 </div>
 </header>
-<!-- ============ BULK ORDER REQUEST ============ -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside aria-hidden="true" aria-label="Bulk order request" class="cart-drawer" id="cartDrawer">
-<div class="cart-drawer-head">
-<h3>Bulk Order Request</h3>
-<button aria-label="Close" class="cart-close" id="cartClose">×</button>
-</div>
-<div class="cart-body" id="cartBody">
-<p class="cart-drawer-intro">This isn't a checkout, it's a wholesale enquiry. We don't list prices since most orders are bulk, add what you need below and we'll come back to you with pricing and shipping for your quantities and region.</p>
-
-<div class="cart-form">
-<label class="cart-field">Company / business name
-<input id="orderCompany" placeholder="e.g. Acme Trading Ltd" type="text">
-</label>
-<label class="cart-field">Contact person
-<input id="orderContact" placeholder="Your full name" type="text">
-</label>
-<div class="cart-form-row">
-<label class="cart-field">Email
-<input id="orderEmail" placeholder="you@company.com" type="email">
-</label>
-<label class="cart-field">Phone <span class="cart-field-optional">(optional)</span>
-<input id="orderPhone" placeholder="+234..." type="tel">
-</label>
-</div>
-<label class="cart-field">Delivery region
-<select id="orderRegion">
-<option value="">Select a region</option>
-<option>West Africa</option>
-<option>Middle East</option>
-<option>Europe</option>
-<option>Other</option>
-</select>
-</label>
-<label class="cart-field">Notes <span class="cart-field-optional">(optional)</span>
-<textarea id="orderNotes" placeholder="Delivery timeline, packaging preferences, anything else we should know" rows="2"></textarea>
-</label>
-</div>
-
-<h4 class="cart-items-title">Items in this request</h4>
-<div class="cart-items" id="cartItems">
-<p class="cart-empty">Your list is empty. Add products and their quantities below to build your request.</p>
-</div>
-</div>
-<div class="cart-drawer-foot">
-<div class="cart-total-line">
-<span>Total items</span>
-<strong id="cartTotalCount">0</strong>
-</div>
-<button class="btn btn-yellow cart-checkout" disabled="" id="cartCheckout">Send bulk order request</button>
-<button class="btn-text cart-clear" disabled="" id="cartClear">Clear list</button>
-</div>
-</aside>
 <main>
 <!-- ============ PAGE INTRO ============ -->
 <section class="catalog-hero">
@@ -158,12 +101,6 @@
 <h4>Indoor Camera</h4>
 <p>V720 app control over WiFi, in white.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-indoor-camera" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -176,12 +113,6 @@
 <h4>Solar Camera (3 Lens)</h4>
 <p>Solar powered with 3 lenses, controlled through the EseeCloud app over 4G.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-camera-3-lens" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -203,12 +134,6 @@
 <h4>Stainless Steel Sink (Double Bowl)</h4>
 <p>Double bowl</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-stainless-steel-sink-double-bowl" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -221,12 +146,6 @@
 <h4>Tissue Holder (Chrome)</h4>
 <p>Wall-mounted, chrome finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-tissue-holder-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -239,12 +158,6 @@
 <h4>Shower Set Complete (Chrome)</h4>
 <p>Full riser rail set with handheld shower</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-shower-set-complete-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -257,12 +170,6 @@
 <h4>Shower Mixer (Chrome)</h4>
 <p>Bath &amp; shower mixer tap</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-shower-mixer-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -275,12 +182,6 @@
 <h4>Kitchen Faucet Chrome (Pull‑Out)</h4>
 <p>Pull-out spray head, chrome finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-kitchen-faucet-chrome-pull-out" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -293,12 +194,6 @@
 <h4>Kitchen Faucet Chrome</h4>
 <p>Standard mixer tap, chrome finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-kitchen-faucet-chrome" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -320,12 +215,6 @@
 <h4>AER Air Freshener</h4>
 <p>5 flavours: Sea Breeze, Berry Rush, Lemon Tangy, Rose Fresh, Jasmine Floral</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-aer-air-freshener" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -338,12 +227,6 @@
 <h4>Laptop Bag</h4>
 <p>Available in grey and black, sized 38 x 30 x 3cm.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-laptop-bag" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -356,12 +239,6 @@
 <h4>Smart Watch (2 straps)</h4>
 <p>Colours: Black 300pcs, White 100pcs, Grey 100pcs, Golden 100pcs</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-smart-watch-2-straps" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -383,12 +260,6 @@
 <h4>Solar Power Bank</h4>
 <p>10,000mAh and 20,000mAh</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-power-bank" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -401,12 +272,6 @@
 <h4>Keychain Torch + Power Bank</h4>
 <p>Multi-functional, compact keychain design</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-keychain-torch-power-bank" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -419,12 +284,6 @@
 <h4>Solar Torch</h4>
 <p>Rechargeable, solar-powered</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-torch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -437,12 +296,6 @@
 <h4>Multi-Function Torch</h4>
 <p>LED 5W torch with power bank &amp; cutter tool</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-multi-function-torch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -455,12 +308,6 @@
 <h4>Adaptor Plug 66W</h4>
 <p>Super fast charging, reverse charging U + C + L</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-adaptor-plug-66w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -473,12 +320,6 @@
 <h4>Extension Cable 3M</h4>
 <p>Multi-socket with USB ports</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-extension-cable-3m" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -500,12 +341,6 @@
 <h4>Track Light 10W, 20W</h4>
 <p>Available in black and white, 200 units each in stock.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-track-light-10w-20w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -518,12 +353,6 @@
 <h4>Track Rail 1M</h4>
 <p>Available in black and white, 270 units each in stock; fits 3 track lights per 1m rail.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-track-rail-1m" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -536,12 +365,6 @@
 <h4>Ring Light (12", 14", 16" and 18")</h4>
 <p>Includes 2.1m tripod &amp; carry bag</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-ring-light-12-14-16-and-18" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -563,12 +386,6 @@
 <h4>Spot Light Small</h4>
 <p>3W, 5W and 7W</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-spot-light-small" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -581,12 +398,6 @@
 <h4>Spot Light Big</h4>
 <p>5W, 7W and 12W</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-spot-light-big" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -599,12 +410,6 @@
 <h4>Panel Light</h4>
 <p>6W, 9W and 12W</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-panel-light" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -626,12 +431,6 @@
 <h4>Switch (1, 2, 3 and 4 gang)</h4>
 <p>White finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-switch-1-2-3-and-4-gang" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -644,12 +443,6 @@
 <h4>Socket</h4>
 <p>Standard wall socket, white finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-socket" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -662,12 +455,6 @@
 <h4>25A Switch</h4>
 <p>White finish</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-25a-switch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -680,12 +467,6 @@
 <h4>45A Switch</h4>
 <p>White finish, red switch action</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-45a-switch" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -698,12 +479,6 @@
 <h4>TV Socket</h4>
 <p>Wall-mounted aerial socket</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-tv-socket" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -716,12 +491,6 @@
 <h4>Switched Socket (Double)</h4>
 <p>White finish, red switch indicator</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-switched-socket-double" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -743,12 +512,6 @@
 <h4>Solar Street Light 150W</h4>
 <p>Battery 3.2V 8AH, mono panel 6V 15W, 620 x 238mm ABS housing, with remote and radar sensor.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-150w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -761,12 +524,6 @@
 <h4>Solar Street Light 200W</h4>
 <p>Battery 3.2V 10AH, mono panel 6V 18W, 720 x 240mm ABS housing, with remote and radar sensor.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-200w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -779,12 +536,6 @@
 <h4>Solar Street Light 250W</h4>
 <p>Battery 3.2V 18AH, mono panel 6V 20W, 820 x 240mm ABS housing, with remote and radar sensor.</p>
 <div class="product-order">
-<div aria-label="Quantity" class="qty-stepper" role="group">
-<button aria-label="Decrease quantity" class="qty-btn qty-minus" type="button">−</button>
-<input aria-label="Quantity" class="qty-input" inputmode="numeric" min="1" step="1" type="number" value="1"/>
-<button aria-label="Increase quantity" class="qty-btn qty-plus" type="button">+</button>
-</div>
-<button class="btn btn-add-cart" type="button">Add to list</button>
 <div class="share-wrap"><button aria-expanded="false" aria-haspopup="true" aria-label="Share this product" class="btn-share" data-share-id="product-solar-street-light-250w" type="button"><svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><circle cx="6" cy="12" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="18" fill="none" r="2.4" stroke="currentColor" stroke-width="1.6"></circle><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="10.8" y2="7.2"></line><line stroke="currentColor" stroke-width="1.6" x1="8.1" x2="15.4" y1="13.2" y2="16.8"></line></svg></button>
 <div class="share-menu" hidden="">
 <button class="share-option share-copy" type="button">Copy link</button>
@@ -890,7 +641,6 @@
 </div>
 
 <script src="js/script.js"></script>
-<script src="js/cart.js"></script>
 <script src="js/share.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/chat-widget.js"></script>

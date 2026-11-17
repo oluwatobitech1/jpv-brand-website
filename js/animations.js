@@ -27,7 +27,7 @@
     revealTargets.push(el);
   }
 
-  $('.section-head, .spotlight-card, .cart-drawer-intro, .promo-band, .feedback-form, .contact-form').forEach(function (el) { markReveal(el, 'up'); });
+  $('.section-head, .spotlight-card, .promo-band, .feedback-form, .contact-form').forEach(function (el) { markReveal(el, 'up'); });
 
   $('.section-grid, .story-grid, .jplux-offer').forEach(function (el) {
     var reversed = el.classList.contains('reverse');

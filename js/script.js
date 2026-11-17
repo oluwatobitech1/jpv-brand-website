@@ -79,7 +79,6 @@ const searchIndex = [
   { title: "Blog", url: "blog.html", meta: "Blog", keywords: "blog news articles updates insights" },
   { title: "Inside Palms Court Estate: Our Latest Build in Ajah, Lagos", url: "blog-palms-court-estate.html", meta: "Blog", keywords: "palms court estate ajah lagos swimming pool tennis court amenities q4 2026 blog article" },
   { title: "What to Expect When Importing Machinery from the UAE", url: "blog-machinery-import-guide.html", meta: "Blog", keywords: "importing machinery uae shipping documentation timeline export guide blog article" },
-  { title: "How Our Bulk Order Request Tool Actually Works", url: "blog-bulk-order-tool.html", meta: "Blog", keywords: "bulk order request tool cart products jplux how it works blog article" },
 ];
 
 const searchToggle = document.getElementById('searchToggle');
