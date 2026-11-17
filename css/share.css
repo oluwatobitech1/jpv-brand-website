@@ -1,0 +1,54 @@
+/* ==========================================================
+   PRODUCT SHARE BUTTON (copy link / WhatsApp, per product card)
+   ========================================================== */
+.product-order{
+  display: flex;
+  justify-content: center;
+  margin: auto 1rem 1rem;
+}
+.share-wrap{ position: relative; flex-shrink: 0; }
+.btn-share{
+  -webkit-user-select: none; user-select: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid #e0e0da;
+  background: #fff;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background-color .15s;
+}
+.btn-share:hover{ border-color: var(--yellow); color: var(--yellow-deep); background: #fff8df; }
+.share-menu{
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid #e6e6e1;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: .4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+  min-width: 130px;
+  z-index: 30;
+}
+.share-menu[hidden]{ display: none; }
+.share-option{
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: .5em .6em;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--black);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.share-option:hover{ background: #f6f5f1; }
