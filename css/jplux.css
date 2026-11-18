@@ -68,7 +68,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 }
 .jplux-offer.reverse{ direction: rtl; }
 .jplux-offer.reverse > *{ direction: ltr; }
-.jplux-offer-media .media-placeholder{ aspect-ratio: 4/3; }
+.jplux-offer-media .media-placeholder{ aspect-ratio: 1/1; max-width: 480px; margin-left: auto; margin-right: auto; }
 .jplux-offer-media .media-placeholder.dark{
   background: linear-gradient(150deg, #1c1c1e 0%, #101011 100%);
   border: 1px solid rgba(201,162,75,0.25);
@@ -141,7 +141,7 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
   overflow: hidden;
   background: linear-gradient(150deg, #1c1c1e 0%, #101011 100%);
 }
-.jplux-lookbook-item img{ aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.jplux-lookbook-item img{ display: block; aspect-ratio: 1/1; object-fit: cover; object-position: center; width: 100%; }
 .jplux-lookbook-item figcaption{
   font-family: var(--font-display);
   font-size: .82rem;
@@ -156,3 +156,17 @@ body.jplux{ background: var(--jplux-black); color: var(--jplux-grey); }
 .jplux-cross-link{ display: inline-block; margin-top: .8rem; color: var(--jplux-gold-light); font-size: .88rem; }
 .jplux-catalog-cta{ text-align: center; margin-top: 1rem; }
 .jplux-catalog-cta a{ color: var(--jplux-gold-light); font-family: var(--font-display); }
+
+
+/* ---- product photos: every frame is square, every photo centred ----
+   Dark-background shots fill the frame; the white-background packshot
+   (cable) is shown whole on a matching white tile so nothing is cropped. */
+.jplux-lookbook-item img.fit-contain,
+.jplux-offer-media .media-placeholder img.fit-contain{
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  padding: 1.5%;
+  box-sizing: border-box;
+}
+.jplux-lookbook-item figcaption{ text-align: center; }

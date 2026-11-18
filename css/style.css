@@ -553,10 +553,12 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   color:#333;
 }
 .products-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* every row, including a short last one, stays centred */
   gap: 1.4rem;
 }
+.products-grid > .product-card{ width: 280px; max-width: 100%; height: auto; }   /* auto so cards in a row stretch to equal height */
 .product-card{
   display: flex;
   flex-direction: column;
@@ -1064,7 +1066,6 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 @media (max-width: 980px){
   .cards-grid{ grid-template-columns: 1fr; }
   .projects-grid{ grid-template-columns: repeat(2, 1fr); }
-  .products-grid{ grid-template-columns: repeat(2, 1fr); }
   .case-grid{ grid-template-columns: repeat(2, 1fr); }
   .brands-grid{ grid-template-columns: repeat(2, 1fr); }
   .contact-details-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -1230,7 +1231,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 /* dark footer: the logo's thin dark ring needs a light backing */
 .site-footer .logo{ color: var(--white); }
 .site-footer .logo-word em{ color: var(--yellow); }
-.site-footer .logo-mark{ background: #fff; border-radius: 50%; padding: 2px; object-fit: contain; }
+.site-footer .logo-mark{ width: 40px; height: 40px; object-fit: contain; }   /* light logo variant, no backing circle */
 
 
 /* ==========================================================
@@ -1299,7 +1300,6 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   box-sizing: border-box;
   filter: drop-shadow(0 14px 24px rgba(0,0,0,.45));
 }
-.chat-avatar{ background: #fff; }
 .media-placeholder.logo-card{ background: #fff; border: 1px solid #e6e6e1; }
 .media-placeholder.logo-card img{ object-fit: contain; padding: 8%; }
 
@@ -1382,4 +1382,166 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .hero-copy{ max-width: calc(100% - var(--float-size) - 3rem); }
   .hero h1 .line{ text-wrap: balance; }
   .hero h1{ text-wrap: balance; }
+}
+
+@media (max-width: 640px){
+  .products-grid > .product-card{ width: 100%; max-width: 360px; }
+}
+
+
+/* ==========================================================
+   BRANDED PRODUCT CATALOGUE
+   One card design for every product: square photo tile, JP mark,
+   gold accent, centred text.
+   ========================================================== */
+.product-card{
+  background: #fff;
+  border: 1px solid #e6e6e1;
+  box-shadow: 0 1px 2px rgba(11,11,12,.04);
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.product-card:hover{
+  transform: translateY(-4px);
+  border-color: var(--yellow);
+  box-shadow: 0 14px 30px rgba(11,11,12,.10);
+}
+.product-media{
+  position: relative;
+  border-bottom: 1px solid #eeeee9;
+  background: linear-gradient(150deg, #f7f6f2 0%, #ecebe5 100%);
+}
+.product-media img{ object-fit: cover; object-position: center; }
+/* narrow or white-background shots are shown whole on a white tile */
+.product-media.fit-contain{ background: #fff; }
+.product-media.fit-contain img{ object-fit: contain; padding: 4%; box-sizing: border-box; }
+/* small JP mark in the corner of every photo */
+.product-media::after{
+  content: "";
+  position: absolute; right: .6rem; bottom: .6rem;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #fff url("../assets/images/jpv-logo-mark.png") center / 80% no-repeat;
+  box-shadow: 0 1px 6px rgba(11,11,12,.22);
+  pointer-events: none;
+}
+.product-card h4{ margin: 1.1rem 1rem 0; font-size: var(--fs-h4); }
+.product-card h4::after{
+  content: "";
+  display: block;
+  width: 28px; height: 2px;
+  margin: .6rem auto .65rem;
+  background: var(--yellow);
+}
+.product-card p{ margin: 0 1rem 1rem; line-height: 1.5; }
+
+/* category headings: short gold rule */
+.catalog-section .section-head h2::after{
+  content: "";
+  display: block;
+  width: 48px; height: 3px;
+  margin: .55rem auto 0;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+/* ==========================================================
+   LIGHTER THEME — former "dark" sections are now a soft warm tint.
+   Dark is kept as an accent only: hero, photo banners, stats band,
+   capabilities, the promo card and the footer.
+   (The JPLUX UK page keeps its own black & gold look.)
+   Need a dark section somewhere? Use class="section section-ink".
+   ========================================================== */
+:root{ --tint: #f1efe7; --card-line: #e6e4dc; }
+
+.section-dark{ background: var(--tint); color: var(--black); }
+.section-dark .section-sub{ color: #66665f; }
+.section-dark .kicker{ color: var(--gold-text); }
+.section-dark .text-block p,
+.section-dark .story-copy p,
+.section-dark .checklist li,
+.section-dark .tick-list li,
+.section-dark .category-block li{ color: #333; }
+.section-dark .story-tagline,
+.section-dark .category-block h4{ color: var(--black); }
+.section-dark .text-link{ color: var(--black); }
+.section-dark .text-link:hover{ color: var(--gold-text); }
+.section-dark .btn-outline{ color: var(--black); border-color: rgba(11,11,12,.35); }
+.section-dark .btn-outline:hover{ border-color: var(--black); background: rgba(11,11,12,.05); }
+
+/* cards on the tint: white, hairline border, soft shadow */
+.service-card, .project-card, .case-card, .brand-tile{
+  background: #fff;
+  border: 1px solid var(--card-line);
+  box-shadow: 0 1px 2px rgba(11,11,12,.04);
+}
+.service-card{ border-top: 3px solid var(--yellow); }
+.service-card:hover, .project-card:hover, .case-card:hover{ box-shadow: 0 14px 30px rgba(11,11,12,.10); }
+.service-card h3, .project-info h3, .case-body h3, .brand-tile h3, .case-meta dt{ color: var(--black); }
+.service-card p, .project-info p, .case-meta, .brand-tile p{ color: #5b5b55; }
+.project-media, .case-media{ background: linear-gradient(150deg, #f7f6f2 0%, #ecebe5 100%); }
+.brand-tile-link:hover{ background: #fffdf6; }
+.brand-tile svg [stroke="#faf9f6"]{ stroke: #1b1b1d; }
+.brand-tile svg [fill="#faf9f6"]{ fill: #1b1b1d; }
+.brand-tile svg [stroke="#f4c10f"]{ stroke: var(--yellow-deep); }
+.brand-tile svg [fill="#f4c10f"]{ fill: var(--yellow-deep); }
+
+/* status tags on white cards */
+.section-dark .badge-soon, .project-card .badge-soon, .case-card .badge-soon{ border-color: var(--gold-text); color: var(--gold-text); }
+.section-dark .badge-ongoing, .project-card .badge-ongoing, .case-card .badge-ongoing{ border-color: var(--red); color: var(--red); }
+
+/* opt-in dark section for any page */
+.section-ink{ background: var(--black); color: var(--white); }
+
+/* ==========================================================
+   LIGHT SPLIT BANNERS — photo on one half, text on a soft background
+   (.banner-light = photo left, .banner-light.banner-flip = photo right)
+   ========================================================== */
+.banner-light{
+  background-color: var(--white);
+  color: var(--black);
+  text-align: left;
+  padding: 0;
+  min-height: min(70vh, 600px);
+  justify-content: flex-start;
+}
+.banner-light::before{ display: none; }
+/* photo half (parallax layer, or the inline image when JS is off) */
+.banner-light .banner-bg{ left: 0; right: auto; width: 50%; transform: none !important; top: 0; height: 100%; }
+.banner-light:not(.has-parallax){
+  background-size: 50% 100% !important;
+  background-position: left center !important;
+  background-repeat: no-repeat !important;
+}
+.banner-light .banner-inner{
+  width: 50%;
+  max-width: none;
+  margin: 0 0 0 50%;
+  padding: var(--section-y) max(var(--gutter), calc((100vw - var(--maxw-content)) / 2)) var(--section-y) 4.5rem;
+}
+.banner-light .banner-inner > *{ margin-left: 0; margin-right: 0; max-width: 560px; }
+.banner-light h2{ color: var(--black); text-shadow: none; margin-left: 0; margin-right: 0; }
+.banner-light .banner-lead{ color: #4a4a45; margin-left: 0; margin-right: 0; }
+.banner-light .kicker{ color: var(--gold-text); }
+.banner-light .banner-actions{ justify-content: flex-start; }
+.banner-light .banner-actions .btn-outline{ color: var(--black); border-color: rgba(11,11,12,.35); }
+.banner-light .banner-actions .btn-outline:hover{ border-color: var(--black); background: rgba(11,11,12,.05); }
+
+/* flipped: photo on the right */
+.banner-light.banner-flip{ background-color: var(--tint); justify-content: flex-start; }
+.banner-light.banner-flip .banner-bg{ left: auto; right: 0; }
+.banner-light.banner-flip:not(.has-parallax){ background-position: right center !important; }
+.banner-light.banner-flip .banner-inner{
+  margin: 0;
+  padding: var(--section-y) 4.5rem var(--section-y) max(var(--gutter), calc((100vw - var(--maxw-content)) / 2));
+}
+
+@media (max-width: 860px){
+  .banner-light, .banner-light.banner-flip{ flex-direction: column; align-items: stretch; min-height: 0; }
+  .banner-light .banner-bg, .banner-light.banner-flip .banner-bg{ left: 0; right: 0; width: 100%; height: 260px; }
+  .banner-light:not(.has-parallax){ background-size: 100% 260px !important; background-position: top center !important; }
+  .banner-light .banner-inner, .banner-light.banner-flip .banner-inner{
+    width: 100%; margin: 0;
+    padding: calc(260px + 2.2rem) var(--gutter) 3rem;
+  }
 }
