@@ -61,7 +61,6 @@ const searchIndex = [
   // Products
   { title: "Security Cameras", url: "products.html#security-cameras", meta: "Products", keywords: "security cameras indoor camera solar camera v720 eseecloud" },
   { title: "Plumbing & Sanitary", url: "products.html#plumbing-sanitary", meta: "Products", keywords: "plumbing sanitary sink tissue holder shower kitchen faucet chrome" },
-  { title: "Lifestyle & Gadgets", url: "products.html#lifestyle-gadgets", meta: "Products", keywords: "lifestyle gadgets aer air freshener laptop bag smart watch" },
   { title: "Power, Charging & Accessories", url: "products.html#power-charging", meta: "Products", keywords: "power bank torch adaptor plug extension cable charging solar" },
   { title: "Track & Ring Lights", url: "products.html#track-ring-lights", meta: "Products", keywords: "track light rail ring light tripod" },
   { title: "Indoor Lighting", url: "products.html#indoor-lighting", meta: "Products", keywords: "spot light panel light indoor lighting" },

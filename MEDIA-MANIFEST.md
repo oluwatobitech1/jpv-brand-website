@@ -79,9 +79,6 @@ This lists every image/video placeholder across the site, in the order it appear
 | Shower Mixer photo | `product-shower-mixer.jpg` | `assets/images/` | image |
 | Kitchen Faucet photo | `product-kitchen-faucet-pullout.jpg` | `assets/images/` | image |
 | Kitchen Faucet photo | `product-kitchen-faucet.jpg` | `assets/images/` | image |
-| AER Air Freshener photo | `product-aer-air-freshener.jpg` | `assets/images/` | image |
-| Laptop Bag photo | `product-laptop-bag.jpg` | `assets/images/` | image |
-| Smart Watch photo | `product-smart-watch.jpg` | `assets/images/` | image |
 | Solar Power Bank photo | `product-solar-power-bank.jpg` | `assets/images/` | image |
 | Keychain Torch photo | `product-keychain-torch.jpg` | `assets/images/` | image |
 | Solar Torch photo | `product-solar-torch.jpg` | `assets/images/` | image |

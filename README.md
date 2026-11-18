@@ -187,7 +187,7 @@ form.
 phone / email / office hours, then an embedded map of Business Bay, Dubai.
 
 **Products (products.html)** — sticky category jump-nav, then a section per
-category: Security Cameras, Plumbing & Sanitary, Lifestyle & Gadgets, Power
+category: Security Cameras, Plumbing & Sanitary, Power
 Charging & Accessories, Track & Ring Lights, Indoor Lighting, Electrical
 Accessories, and Solar & Outdoor Lighting (marked "coming soon").
 
